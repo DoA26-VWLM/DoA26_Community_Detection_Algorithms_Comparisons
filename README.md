@@ -1,9 +1,10 @@
-# DoA26_Community_Detection
+# CSC2400: Design of Algorithms Community Detection Algorithms Comparison
 
 ## Introduction
-This project is over the use and comparison of runtimes of 4 algorithms attempting to solve the Community Detection problem.
+This project is over the use and comparison of 4 algorithms to solve the Community Detection problem.
 
-The Community Detection problem involves taking a graph and identifying groups of nodes called "communities". A community is a collection of nodes that have high interconnectivity within itself with minimal connectivity outside of the community. We will be analyzing, implementing, and comparing 4 algorithms:
+### Problem Description
+The Community Detection problem involves taking a graph and identifying groups of nodes called "communities". A community is a collection of nodes that have high interconnectivity within itself with minimal connectivity outside of the community. We will be analyzing, implementing, and comparing the results of 4 algorithms:
 
 - Brute Force
     - Brute Force is used as a baseline function. It has a runtime of Θ(2n), which makes it impractical for any decently sized dataset. Therefore, it is only being used as a baseline for experimental and educational purposes. 
@@ -13,6 +14,12 @@ The Community Detection problem involves taking a graph and identifying groups o
     - Spectral clustering uses linear algebra to turn a graph into points in lower-dimensional space, then clusters those points. Nodes that are strongly connected end up closer together in this new space. The runtime of Spectral Clusting is Θ(n³). This has a much slower runtime than LPA. However, the solution quality and accuracy is better. 
 - Emporeror Penguin Optimizer (EPO)
     - This is our nature-inspired algorithm, inspired by the huddling of Emperor Penguins to preserve heat. This algorithm makes random guesses of communities that continue to improve by copying the best solution. Every iteration, each “penguin” may move a node to a different community, merge, or split groups, with the end goal of moving towards the solution with a bit of randomness to prevent the algorithm from getting stuck. It has a runtime of Θ(I × P × D), where I = Max Iterations, P = Population Size, and D = Number of Dimensions, which is approximately Θ(n³).0
+
+## Team Members
+This project was developed collaboratively, with the help of:
+- Vincent Pestilli
+- Wesley Ni
+- Marcus VanWerry
 
 ## Dependencies
 This project will be using Python and the following libraries:

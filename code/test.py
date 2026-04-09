@@ -2,7 +2,7 @@ from node import *
 import networkx as nx
 import chrono
 
-GRAPHLINK = "karateGraphGithub.txt"
+GRAPHLINK = "../data/karateGraphGithub.txt"
 
 newGraph = nx.read_gml(GRAPHLINK)
 
