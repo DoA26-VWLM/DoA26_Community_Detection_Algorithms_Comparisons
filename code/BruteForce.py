@@ -119,12 +119,13 @@ def brute_force_community_detection(edges):
     # convert to grouped output for formatting for the purposes of testing and figuring out what we are doing
     grouped = group_communities(nodes, best_partition)
 
-    return grouped, best_score
+    print(grouped)
+    return best_score
 
 
 # HARD CODED EXAMPLE FOR TESTING
 
-if __name__ == "__main__": # THIS IS FORMATTED AS:
+"""if __name__ == "__main__": # THIS IS FORMATTED AS:
     edges = [
         (0, 1), # 0 is adjacent to 1
         (0, 2), # 0 is adjacent to 2
@@ -136,4 +137,4 @@ if __name__ == "__main__": # THIS IS FORMATTED AS:
 
     print("Best community grouping:")
     print(communities)
-    print("Modularity score:", score)
+    print("Modularity score:", score)"""
