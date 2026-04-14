@@ -25,6 +25,8 @@ This project was developed collaboratively, with the help of:
 This project will be using Python and the following libraries:
 - NetworkX
 - Chrono
+- numpy
+- scikit-learn
 
 ## Datasets
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
