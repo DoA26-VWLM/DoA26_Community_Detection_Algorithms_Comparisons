@@ -4,10 +4,10 @@ import BruteForce
 
 edgeArray = []
 
-#GRAPHLINK = "../data/karateGraphGithub.txt"
+#GRAPHLINK = "../data/karateGraphGithub.gml"
 GRAPHLINK = "../data/test.gml"
 
-newGraph: nx.Graph = nx.read_gml(GRAPHLINK) 
+newGraph: nx.Graph = nx.read_gml(GRAPHLINK)
 
 #print(newGraph.nodes(data=True))
 print("\n")
@@ -18,4 +18,4 @@ for edge in newGraph.edges:
 
 
 print("\n\n")
-BruteForce.brute_force_community_detection(edgeArray)
+#BruteForce.brute_force_community_detection(edgeArray)
