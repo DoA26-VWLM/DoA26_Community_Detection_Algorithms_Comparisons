@@ -27,7 +27,7 @@ def labelPropagation(graph: nx.Graph, numLabels: int):
 
     # Stops iterating through the algorithm when nothing changes or whenever the number of passes equals the number of nodes(stop infinite looping)
     # and numPasses < 5 * (len(nodes) - 1)
-    while (stable < len(nodes) and numPasses < pow(len(nodes), numLabels)):
+    while (stable < len(nodes) and numPasses < (len(nodes) * numLabels)):
         newLabelsArray = nodeLabels.copy()
         stable = 0
 
