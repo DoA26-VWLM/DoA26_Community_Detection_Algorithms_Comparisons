@@ -24,9 +24,13 @@ This project was developed collaboratively, with the help of:
 ## Dependencies
 This project will be using Python and the following libraries:
 - NetworkX
+    - Allows for quickly importing and creating graphs from GML without the overhead of hand-jamming graphs and associated methods
 - Chrono
+    - Used for determining runtimes
 - numpy
+    - Gives advanced mathematical functions, specifically for linear algebra operations in Spectral Clustering
 - scikit-learn
+    - Gives us access to a K-Means function instead of having to create it from scratch
 
 ## Datasets
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
