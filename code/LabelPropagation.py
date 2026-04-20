@@ -14,9 +14,9 @@ def labelPropagation(graph: nx.Graph, numLabels: int):
     communitiesArray = []
     newLabelsArray = [0] * len(nodes)
 
-    print(adjacencyLists)
-    print(nodes) #debugging
-    print(nodeLabelOptions)
+    #print(adjacencyLists)
+    #print(nodes) #debugging
+    #print(nodeLabelOptions)
 
     
     # Goes to each node and assigns it a random, numerical character label within the bounds of numLabels
@@ -33,7 +33,7 @@ def labelPropagation(graph: nx.Graph, numLabels: int):
 
         #This is the loop that actually propagates the labels, sorting the graph into communities
         for i in range(len(nodes)):
-            print(nodeLabels) #debugging
+            #print(nodeLabels) #debugging
             nodeLabelOptions = [0] * numLabels
             newLabel = 0
             previousLabel = -1
@@ -42,7 +42,7 @@ def labelPropagation(graph: nx.Graph, numLabels: int):
             for j in range(len(adjacencyLists[str(i)])):
                 nodeLabelOptions[nodeLabels[int(adjacencyLists[str(i)][j])] - 1] += 1
             
-            print(nodeLabelOptions) #debugging
+            #print(nodeLabelOptions) #debugging
             #Makes the program not crash from an empty edge list
             if (len(nodeLabelOptions) > 0):
                 #Finds the most common connected label
@@ -63,7 +63,7 @@ def labelPropagation(graph: nx.Graph, numLabels: int):
         nodeLabels = newLabelsArray
         # Increments number of passes to avoid an infinite loop
         numPasses = numPasses + 1
-        print("numPasses: " + str(numPasses)) #debugging
+        #print("numPasses: " + str(numPasses)) #debugging
 
     #Prep the output
     for i in range(len(nodes)):

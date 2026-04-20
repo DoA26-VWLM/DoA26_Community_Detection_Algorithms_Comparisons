@@ -23,9 +23,9 @@ This project was developed collaboratively, with the help of:
 
 ## Dependencies
 This project will be using Python and the following libraries:
-- NetworkX
+- networkx
     - Allows for quickly importing and creating graphs from GML without the overhead of hand-jamming graphs and associated methods
-- Chrono
+- chrono
     - Used for determining runtimes
 - numpy
     - Gives advanced mathematical functions, specifically for linear algebra operations in Spectral Clustering

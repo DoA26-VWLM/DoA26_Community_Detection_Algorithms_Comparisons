@@ -12,10 +12,8 @@ GRAPHLINK = "../data/test.gml"
 
 newGraph: nx.Graph = nx.read_gml(GRAPHLINK)
 
-print("\n")
-
 edgeArray = helperFunctions.getEdges(newGraph)
 
-print("\n\n")
-
 LabelPropagation.labelPropagation(newGraph, 4)
+#SpectralClustering.spectralClustering(newGraph, 4)
+#BruteForce.brute_force_community_detection(edgeArray)
