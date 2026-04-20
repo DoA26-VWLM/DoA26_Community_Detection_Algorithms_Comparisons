@@ -7,8 +7,8 @@ import helperFunctions
 
 edgeArray = []
 
-GRAPHLINK = "../data/karateGraphGithub.gml"
-#GRAPHLINK = "../data/test.gml"
+#GRAPHLINK = "../data/karateGraphGithub.gml"
+GRAPHLINK = "../data/test.gml"
 
 newGraph: nx.Graph = nx.read_gml(GRAPHLINK)
 
@@ -18,4 +18,4 @@ edgeArray = helperFunctions.getEdges(newGraph)
 
 print("\n\n")
 
-LabelPropagation.labelPropagation(newGraph, 5)
+LabelPropagation.labelPropagation(newGraph, 4)
