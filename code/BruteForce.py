@@ -1,4 +1,5 @@
 import helperFunctions
+import networkx as nx
 
 # Generate ALL partitions (brute force)
 def generate_partitions(n):
@@ -41,7 +42,8 @@ def group_communities(nodes, partition):
 
 
 # Main brute force algorithm
-def brute_force_community_detection(edges):
+def brute_force_community_detection(graph: nx.Graph):
+    edges = helperFunctions.getEdges(graph)
     # get unique nodes
     nodes = []
     for (u, v) in edges:

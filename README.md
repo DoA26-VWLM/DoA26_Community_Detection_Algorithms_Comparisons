@@ -31,6 +31,8 @@ This project will be using Python and the following libraries:
     - Gives advanced mathematical functions, specifically for linear algebra operations in Spectral Clustering
 - scikit-learn
     - Gives us access to a K-Means function instead of having to create it from scratch
+- easygui
+    - Name is self-explanatory. Allows us to create a very simple GUI quickly and easily.  
 
 ## Datasets
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
