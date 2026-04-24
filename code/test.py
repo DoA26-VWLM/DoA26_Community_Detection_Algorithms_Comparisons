@@ -15,4 +15,7 @@ newGraph: nx.Graph = nx.read_gml(GRAPHLINK)
 #SpectralClustering.spectralClustering(newGraph, 4)
 #BruteForce.brute_force_community_detection(newGraph)
 
+timer = chrono.Timer()
+timer
+
 print(LabelPropagation.label_propagation(newGraph))

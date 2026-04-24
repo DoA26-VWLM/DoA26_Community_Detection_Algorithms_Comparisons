@@ -37,16 +37,28 @@ while (exitProgram == False):
             #Creates the graph
             graphLink = "../data/" + datasetBoxButton
             graph = nx.read_gml(graphLink)
-            easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
+            
             if algorithmsBoxButton == "Brute Force":
-                BruteForce.brute_force_community_detection(graph)
+                easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
+                with chrono.Timer() as timed:
+                    BruteForce.brute_force_community_detection(graph)
+                print(str(round(timed.elapsed, 1)) + " seconds")
             elif algorithmsBoxButton == "Label Propagation":
-                LabelPropagation.label_propagation(graph)
+                easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
+                with chrono.Timer() as timed:
+                    LabelPropagation.label_propagation(graph)
+                print(str(round(timed.elapsed, 1)) + " seconds")
             elif algorithmsBoxButton == "Spectral Clustering":
                 k = easygui.integerbox("Select your k for Spectral Clustering (At least 1)", GUITITLE, lowerbound=1)
-                SpectralClustering.spectralClustering(graph, k)
+                easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
+                with chrono.Timer() as timed:
+                    SpectralClustering.spectralClustering(graph, k)
+                print(str(round(timed.elapsed, 1)) + " seconds")
             elif algorithmsBoxButton == "Emperor Penguin Optimizer":
-                pass
+                easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
+                with chrono.Timer() as timed:
+                    pass #Insert EPO Algorithm here
+                print(str(round(timed.elapsed, 1)) + " seconds")
             else:
                 exitProgram = True
 
