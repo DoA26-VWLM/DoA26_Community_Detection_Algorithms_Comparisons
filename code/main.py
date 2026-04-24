@@ -31,8 +31,9 @@ while (exitProgram == False):
         # Updates the list of datasets from data directory every time this is called
         datasets = os.listdir("../data")
         datasetBoxButton = easygui.choicebox("Which datset would you like to use? (Pulled from ../data/*)", GUITITLE, datasets)
-        if datasetBoxButton == None or datasetBoxButton == "Exit Program":
-            exitProgram = True
+        print(datasetBoxButton) # debugging
+        if datasetBoxButton == None:
+            continue
         else:
             #Creates the graph
             graphLink = "../data/" + datasetBoxButton
