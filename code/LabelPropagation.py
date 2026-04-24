@@ -1,87 +1,90 @@
-import networkx as nx
-import helperFunctions
 import random
-
-#This only works on a 0 based graph (first vertex is 0). If that isn't there, just add a 0 node that connects to nothing. 
-# This functions does label propagation. The labels parameter indicates how many unique labels should be used
-def labelPropagation(graph: nx.Graph, numLabels: int):
-    nodes = helperFunctions.getVertices(graph)
-    nodeLabels = []
-    adjacencyLists = nx.to_dict_of_lists(graph)
-    stable = 0
-    nodeLabelOptions = [0] * numLabels
-    numPasses = 0
-    communitiesArray = []
-    newLabelsArray = [0] * len(nodes)
-
-    #print(adjacencyLists)
-    #print(nodes) #debugging
-    #print(nodeLabelOptions)
-
-    
-    # Goes to each node and assigns it a random, numerical character label within the bounds of numLabels
-    # These labels then get added to the nodeLabels array that is parallel to the nodes array: connecting node to label based on index
-    for i in range(len(nodes)):
-        nodeLabels.append(random.randint(1, numLabels))
+import networkx as nx
 
 
-    # Stops iterating through the algorithm when nothing changes or whenever the number of passes equals the number of nodes(stop infinite looping)
-    # and numPasses < 5 * (len(nodes) - 1)
-    while (stable < len(nodes) and numPasses < (len(nodes) * numLabels)):
-        newLabelsArray = nodeLabels.copy()
-        stable = 0
+def label_propagation(graph: nx.Graph):
+    """
+    Perform community detection using the Label Propagation algorithm.
 
-        #This is the loop that actually propagates the labels, sorting the graph into communities
-        for i in range(len(nodes)):
-            #print(nodeLabels) #debugging
-            nodeLabelOptions = [0] * numLabels
-            newLabel = 0
-            previousLabel = -1
-            
-            #Iterates through and retrieves the label of each neighboring node
-            for j in range(len(adjacencyLists[str(i)])):
-                nodeLabelOptions[nodeLabels[int(adjacencyLists[str(i)][j])] - 1] += 1
-            
-            #print(nodeLabelOptions) #debugging
-            #Makes the program not crash from an empty edge list
-            if (len(nodeLabelOptions) > 0):
-                #Finds the most common connected label
-                newLabel = findHighestNum(nodeLabelOptions)
-                # Saves previous label to check if anything changed
-                previousLabel = nodeLabels[i]
-                # Assigns the new label to the newLabelsArray
-                newLabelsArray[i] = newLabel
-            else:
-                #Accounts for entirely isolated nodes
-                newLabelsArray[i] = nodeLabels[i]
-                stable += 1
+    Parameters:
+        graph (networkx.Graph): Input graph (unweighted, undirected assumed)
+        max_iter (int): Maximum number of iterations to prevent infinite loops
 
-            if (previousLabel == newLabel):
-                stable = stable + 1
-        
-        #This format allows the labels to be updated all at once after one pass instead of one at a time. This increases consistency
-        nodeLabels = newLabelsArray
-        # Increments number of passes to avoid an infinite loop
-        numPasses = numPasses + 1
-        #print("numPasses: " + str(numPasses)) #debugging
+    Returns:
+        List[List[node]]: A list of communities, where each community is a list of nodes
+    """
 
-    #Prep the output
-    for i in range(len(nodes)):
-        communitiesArray.append("Node " + str(i) + ": Community " + str(nodeLabels[i]))
-    
-    print(communitiesArray)
-    return communitiesArray
+    #Makes a cutoff point to prevent an infinite loop
+    max_iter = len(graph.nodes) ** 2
 
-#Simple helper function to find the label with the highest number of counts
-def findHighestNum(array):
-    tiebreaker = 0
-    highestIndex = 0
-    for i in range(len(array)):
-        if (array[i] > array[highestIndex]):
-            highestIndex = i
-        #Breaks ties via a coinflip to maintain randomness
-        if (array[i] == array[highestIndex]):
-            tiebreaker = random.randint(1, 2)
-            if (tiebreaker == 2):
-                highestIndex = i
-    return highestIndex + 1
+    # Step 1: Initialize labels
+    # Each node starts with a unique label (its own ID)
+    node_labels = {node: node for node in graph.nodes()}
+
+    # Step 2: Iteratively update labels
+    for iteration in range(max_iter):
+        labels_changed = False  # Track if any label changes this iteration
+
+        # Shuffle node order for asynchronous updates
+        nodes = list(graph.nodes())
+        random.shuffle(nodes)
+
+        # Step 3: Visit each node and update its label
+        for current_node in nodes:
+
+            # Get neighbors of the current node
+            neighbor_nodes = list(graph.neighbors(current_node))
+
+            # Skip isolated nodes
+            if not neighbor_nodes:
+                continue
+
+
+            # Step 4: Count neighbor labels
+
+            neighbor_label_counts = {}
+
+            for neighbor in neighbor_nodes:
+                neighbor_label = node_labels[neighbor]
+
+                if neighbor_label not in neighbor_label_counts:
+                    neighbor_label_counts[neighbor_label] = 0
+                neighbor_label_counts[neighbor_label] += 1
+
+
+            # Step 5: Find most frequent label(s)
+
+            max_frequency = max(neighbor_label_counts.values())
+
+            most_frequent_labels = []
+            for label, count in neighbor_label_counts.items():
+                if count == max_frequency:
+                    most_frequent_labels.append(label)
+
+
+            # Step 6: Random tie-breaking
+
+            selected_label = random.choice(most_frequent_labels)
+
+
+            # Step 7: Update label if changed
+
+            if node_labels[current_node] != selected_label:
+                node_labels[current_node] = selected_label
+                labels_changed = True
+
+        # Step 8: Stop if no changes occurred
+        if not labels_changed:
+            break
+
+    # Step 9: Group nodes into communities
+    communities_by_label = {}
+
+    for node, label in node_labels.items():
+        if label not in communities_by_label:
+            communities_by_label[label] = []
+        communities_by_label[label].append(node)
+
+    print(list(communities_by_label.values()))
+
+    return list(communities_by_label.values())

@@ -49,8 +49,7 @@ while (exitProgram == False):
                 bruteForceThread.start()
                 bruteForceThread.join()
             elif algorithmsBoxButton == "Label Propagation":
-                labels = easygui.integerbox("Select how many labels you would like to use for Label Propagation(At least 1)", GUITITLE, lowerbound=1)
-                LabelPropagation.labelPropagation(graph, labels)
+                LabelPropagation.label_propagation(graph)
                 #labelPropagationThread = threading.Thread(target=LabelPropagation.labelPropagation(graph, labels))
                 #guiThread.start()
                 #labelPropagationThread.start()
