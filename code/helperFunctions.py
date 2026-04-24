@@ -1,4 +1,5 @@
 import networkx as nx
+import easygui
 
 def build_adj_matrix(edges, nodes):
     n = len(nodes)
@@ -60,3 +61,6 @@ def getVertices(graph: nx.Graph):
     for vertex in graph.nodes:
         verticesArray.append(vertex)
     return verticesArray
+
+def showAsyncGUI():
+    easygui.msgbox("Your algorithm is running. Please stand by...", "Community Detection Algorithm Comparisons")
