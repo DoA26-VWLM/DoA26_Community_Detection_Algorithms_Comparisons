@@ -15,7 +15,6 @@ def spectralClustering(graph: nx.Graph, k: int):
     #The toarray() method changes the matrix from a SciPy sparse array (which is space efficient but not used for calculations)
     #Into a traditional, 2d array for calculations
     laplacianMatrix = nx.normalized_laplacian_matrix(graph).toarray()
-    print(laplacianMatrix)
     
     eigVal, eigVec = np.eigh(laplacianMatrix)
     eigVec = eigVec[:, 0:k]
@@ -30,13 +29,16 @@ def spectralClustering(graph: nx.Graph, k: int):
     #Construct an object k means with 
     kmeans = KMeans(n_clusters=k)
     labelsNorm = kmeans.fit_predict(eigVec_normalized)
-    print("\n\nLabels\n")
-    print(labelsNorm)
 
-    for label in labelsNorm:
-        nodeLabel = "Node " + str(labelNum) + " : Group " + str(labelsNorm[labelNum])
-        nodesOutputArray.append(nodeLabel)
-        labelNum += 1
+    # Create k empty lists (one per community)
+    communities = [[] for _ in range(k)]
 
-    print(nodesOutputArray)
-    return nodesOutputArray
+    # Map nodes to their cluster
+    nodes = list(graph.nodes())
+
+    for i, label in enumerate(labelsNorm):
+        communities[label].append(nodes[i])
+
+    print("\nCommunities:\n", communities)
+
+    return communities
