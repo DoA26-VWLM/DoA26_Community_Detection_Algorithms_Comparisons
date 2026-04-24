@@ -3,6 +3,7 @@ import chrono
 import BruteForce
 import SpectralClustering
 import LabelPropagation
+import EmperorPenguinOptimizer
 import helperFunctions
 import easygui
 import os
@@ -58,7 +59,7 @@ while (exitProgram == False):
             elif algorithmsBoxButton == "Emperor Penguin Optimizer":
                 easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
                 with chrono.Timer() as timed:
-                    pass #Insert EPO Algorithm here
+                    EmperorPenguinOptimizer.emperor_penguin_optimization_community_detection(graph)
                 print(str(round(timed.elapsed, 1)) + " seconds")
             else:
                 exitProgram = True
