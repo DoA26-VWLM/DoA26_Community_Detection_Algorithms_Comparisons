@@ -29,24 +29,29 @@ def build_adj_matrix(edges, nodes):
 
 # Compute modularity
 # What this does is scores each partition based on how many edges are within communities vs between communities.
-def modularity(A, communities):
-    n = len(A)
+def modularity(adj_matrix, node_communities):
+    num_nodes = len(adj_matrix)
 
-    # degree of each node
-    k = []
-    for i in range(n):
-        k.append(sum(A[i]))
+    # degree of each node (number of edges connected to it)
+    degrees = []
+    for i in range(num_nodes):
+        degrees.append(sum(adj_matrix[i]))
 
-    # total number of edges
-    m = sum(k) / 2
+    # total number of edges in the graph
+    num_edges = sum(degrees) / 2
 
-    Q = 0
-    for i in range(n):
-        for j in range(n):
-            if communities[i] == communities[j]:
-                Q += A[i][j] - (k[i] * k[j]) / (2 * m)
+    modularity_score = 0
 
-    return Q / (2 * m)
+    for i in range(num_nodes):
+        for j in range(num_nodes):
+            if node_communities[i] == node_communities[j]:
+                
+                actual_edge = adj_matrix[i][j]
+                expected_edge = (degrees[i] * degrees[j]) / (2 * num_edges)
+
+                modularity_score += actual_edge - expected_edge
+
+    return modularity_score / (2 * num_edges)
 
 # Retrieves edges from graph as a normal array
 def getEdges(graph: nx.Graph):
