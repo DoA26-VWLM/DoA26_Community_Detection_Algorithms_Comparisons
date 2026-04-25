@@ -60,7 +60,7 @@ while (exitProgram == False):
                 easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
                 with chrono.Timer() as timed:
                     EmperorPenguinOptimizer.emperor_penguin_optimization_community_detection(graph)
-                print(str(round(timed.elapsed, 1)) + " seconds")
+                print(str(round(timed.elapsed, 6)) + " seconds")
             else:
                 exitProgram = True
 
