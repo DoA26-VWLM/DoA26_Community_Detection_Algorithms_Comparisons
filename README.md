@@ -4,25 +4,31 @@
 This project is over the use and comparison of 4 algorithms to solve the Community Detection problem.
 
 ## Running The Program
-    
-    > python ./code/main.py
 
-    You may alternatively have to use "python3" instead of "python" depending on your interpreter setup. 
+### Easy Run:
 
-    Before this is able to be run, you must install the following dependencies(more details below):
-        - networkx
-        - chrono
-        - numpy
-        - scikit-learn
-        - easygui
+In the ./code folder, there is an executable called "communityDetection.exe". This has everything bundled up into it. Do not move this executable or it will break. 
 
-    To do this, use the command:
+### Manual Run:
 
-    > pip install [package name]
+> python ./code/main.py
 
-    for each package required. 
+You may have to use "python3" instead of "python" depending on your interpreter setup. 
 
-    NOTE: easygui can be slow sometimes. If the program takes a minute to start or GUI windows take longer than expected to open, that is perfectly normal and is outside of our control. The GUI is done by easygui, which although it is very simple, it can be slow and clunky. Furthermore, when you run an algorithm, all program windows will close until the algorithm is done running. This is also normal. The program has not crashed. If you check the console, you will be able to see that the program is still running. This is also due to easygui's implementation. Also, if you run a test on a big dataset, the "continue" button will probably be hidden. You will have to fullscreen the window. Basically, if you see anything weird happening with the GUI, it is likely outside of our control and dependent on the easygui package. We wanted a GUI to make this look nice, but it can be clunky. 
+Before this is able to be run, you must install the following dependencies(more details below):
+- networkx
+- chrono
+- numpy
+- scikit-learn
+- easygui
+
+To do this, use the command:
+
+> pip install [package name]
+
+for each package required. 
+
+NOTE: easygui can be slow sometimes. If the program takes a minute to start or GUI windows take longer than expected to open, that is perfectly normal and is outside of our control. The GUI is done by easygui, which although it is very simple, it can be slow and clunky. Furthermore, when you run an algorithm, all program windows will close until the algorithm is done running. This is also normal. The program has not crashed. If you check the console, you will be able to see that the program is still running. This is also due to easygui's implementation. Also, if you run a test on a big dataset, the "continue" button will probably be hidden. You will have to fullscreen the window. Basically, if you see anything weird happening with the GUI, it is likely outside of our control and dependent on the easygui package. We wanted a GUI to make this look nice, but it can be clunky. 
 
 ## Problem Description
 The Community Detection problem involves taking a graph and identifying groups of nodes called "communities". A community is a collection of nodes that have high interconnectivity within itself with minimal connectivity outside of the community. We will be analyzing, implementing, and comparing the results of 4 algorithms:
@@ -53,7 +59,7 @@ This project will be using Python and the following libraries:
 - scikit-learn
     - Gives us access to a K-Means function instead of having to create it from scratch
 - easygui
-    - Name is self-explanatory. Allows us to create a very simple GUI quickly and easily.  
+    - Name is self-explanatory. Allows us to create a very simple(albeit slow and clunky) GUI quickly and easily.  
 
 ## Datasets
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
