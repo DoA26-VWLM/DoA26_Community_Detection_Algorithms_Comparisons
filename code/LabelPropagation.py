@@ -85,6 +85,4 @@ def label_propagation(graph: nx.Graph):
             communities_by_label[label] = []
         communities_by_label[label].append(node)
 
-    print(list(communities_by_label.values()))
-
     return list(communities_by_label.values())

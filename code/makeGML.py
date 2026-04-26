@@ -1,4 +1,7 @@
-#Makes a GML file
+#This is just a helper script that can make customizable GML data for use by our main program
+#This is not required for our program to run. It is entirely independent, but we thought we'd leave it in
+
+
 import random
 import math
 DATAPATH = "../data/"
@@ -20,7 +23,7 @@ def checkDuplicate(source, target, usedEdges):
 def makeGML(nodesNum: int, edgesDensity: float, fileName: str):
     currentNodeNumber = 0
     currentEdgesNumber = 0
-    edgesNum = math.ceil((nodesNum * (nodesNum - 1)) / 2)
+    edgesNum = math.ceil((edgesDensity * (nodesNum * (nodesNum - 1)) / 2))
     fileObject = open(fileName, "w")
     randomSource = -1
     randomTarget = -1
@@ -60,4 +63,4 @@ def makeGML(nodesNum: int, edgesDensity: float, fileName: str):
     return
 
 
-makeGML(100, .1, DATAPATH + "test100")
+makeGML(1000, .9, DATAPATH + "graph1000-d90.gml")

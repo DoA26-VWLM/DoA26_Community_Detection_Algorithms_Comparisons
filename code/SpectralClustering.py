@@ -39,6 +39,4 @@ def spectralClustering(graph: nx.Graph, k: int):
     for i, label in enumerate(labelsNorm):
         communities[label].append(nodes[i])
 
-    print("\nCommunities:\n", communities)
-
     return communities

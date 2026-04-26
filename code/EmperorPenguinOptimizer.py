@@ -230,6 +230,5 @@ def emperor_penguin_optimization_community_detection(graph: nx.Graph):
         if (len(communityArray) > 0):
             finalCommunities.append(communityArray)
         communityNum += 1
-            
-    print(finalCommunities)
+
     return finalCommunities

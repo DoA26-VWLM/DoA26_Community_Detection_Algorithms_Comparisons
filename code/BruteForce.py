@@ -74,7 +74,6 @@ def brute_force_community_detection(graph: nx.Graph):
     # convert to grouped output for formatting for the purposes of testing and figuring out what we are doing
     grouped = group_communities(nodes, best_partition)
 
-    communities = str(list(grouped.values()))
+    communities = list(grouped.values())
 
-    print(communities)
-    return best_score
+    return communities
