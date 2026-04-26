@@ -107,6 +107,7 @@ def prepForMod(communitiesArray):
         for node in community:
             communityValuesArray.append(-1)
             numNodes += 1
+
     
     #Adds each node to its correct index(its node number) as the value of its community
     while communityNum < len(communitiesArray):

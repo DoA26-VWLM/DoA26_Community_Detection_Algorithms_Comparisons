@@ -76,4 +76,4 @@ def brute_force_community_detection(graph: nx.Graph):
 
     communities = list(grouped.values())
 
-    return communities
+    return communities, best_score

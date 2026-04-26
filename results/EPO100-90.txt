@@ -1,0 +1,70 @@
+Community Detection Report:
+Algorithm: Emperor Penguin Optimization
+Dataset: graph100-d90
+Time: 4.987261 seconds
+Modularity: -0.008994
+Community 1: 41
+Community 2: 25
+Community 3: 86
+Community 4: 8, 73
+Community 5: 62
+Community 6: 60, 67
+Community 7: 70
+Community 8: 4
+Community 9: 38
+Community 10: 0, 12
+Community 11: 19, 81
+Community 12: 39, 91
+Community 13: 71, 96
+Community 14: 37
+Community 15: 65
+Community 16: 17, 72
+Community 17: 47, 51
+Community 18: 31, 64
+Community 19: 42, 93
+Community 20: 1, 49
+Community 21: 27, 61, 63
+Community 22: 92
+Community 23: 34, 90
+Community 24: 35
+Community 25: 20, 26, 97
+Community 26: 50
+Community 27: 74, 89
+Community 28: 11, 68
+Community 29: 21, 40
+Community 30: 98
+Community 31: 79
+Community 32: 10
+Community 33: 14, 22
+Community 34: 84
+Community 35: 36, 45, 56
+Community 36: 28, 46
+Community 37: 32
+Community 38: 88
+Community 39: 24
+Community 40: 53, 69
+Community 41: 43, 52
+Community 42: 6
+Community 43: 83
+Community 44: 87
+Community 45: 54
+Community 46: 57
+Community 47: 94
+Community 48: 9
+Community 49: 15, 77
+Community 50: 29
+Community 51: 30
+Community 52: 2, 82
+Community 53: 3, 66
+Community 54: 80
+Community 55: 5
+Community 56: 75, 85
+Community 57: 95
+Community 58: 48
+Community 59: 55, 78
+Community 60: 23, 44, 58
+Community 61: 13, 16, 33
+Community 62: 76
+Community 63: 7
+Community 64: 18
+Community 65: 59, 99

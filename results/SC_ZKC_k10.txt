@@ -1,0 +1,15 @@
+Community Detection Report:
+Algorithm: Spectral CLustering
+Dataset: karateGraphGithub.gml
+Time: 0.007964 seconds
+Modularity: 0.272847
+Community 1: 24, 28
+Community 2: 9, 15, 16, 19, 21, 23, 33, 34
+Community 3: 1, 5, 11, 12
+Community 4: 6, 7, 17
+Community 5: 2, 18, 20, 22, 31
+Community 6: 3, 4, 8, 13, 14
+Community 7: 25, 26
+Community 8: 10, 29, 32
+Community 9: 27, 30
+Community 10: 0

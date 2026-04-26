@@ -1,0 +1,7 @@
+Community Detection Report:
+Algorithm: Brute Force
+Dataset: graph10-d50
+Time: 14.804221 seconds
+Modularity: 0.135161
+Community 1: 0, 1, 2, 3, 4, 5
+Community 2: 6, 7, 8, 9

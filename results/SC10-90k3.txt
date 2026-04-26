@@ -1,0 +1,8 @@
+Community Detection Report:
+Algorithm: Spectral CLustering
+Dataset: graph10-d90
+Time: 0.023081 seconds
+Modularity: -0.024093
+Community 1: 6
+Community 2: 0, 1, 3, 4, 5, 8, 9
+Community 3: 2, 7

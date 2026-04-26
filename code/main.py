@@ -53,7 +53,7 @@ while (exitProgram == False):
                 chosenAlgorithm = "Brute Force"
                 easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
                 with chrono.Timer() as timed:
-                    detectedCommunities = BruteForce.brute_force_community_detection(graph)
+                    detectedCommunities, modScore = BruteForce.brute_force_community_detection(graph)
             elif algorithmsBoxButton == "Label Propagation":
                 chosenAlgorithm = "Label Propagation"
                 easygui.msgbox("Your algorithm is about to run. This window will close. Another window will open when your algorithm has been solved", GUITITLE)
@@ -74,8 +74,11 @@ while (exitProgram == False):
                 exitProgram = True
 
         #Calculate modularity
-        modPrepArray = helperFunctions.prepForMod(detectedCommunities)
-        modScore = helperFunctions.modularity(nx.adjacency_matrix(graph).toarray(), modPrepArray)
+        #The modScore is set from Brute Force when it outputs. Due to the way Brute-Force works, it is easier to just take the modularity from
+        #The brute force function instead of trying to change Brute-Force and/or prepForMod to accomodate specifically Brute-Force's different output
+        if chosenAlgorithm != "Brute Force":
+            modPrepArray = helperFunctions.prepForMod(detectedCommunities)
+            modScore = helperFunctions.modularity(nx.adjacency_matrix(graph).toarray(), modPrepArray)
         # Results of algorithm
         easygui.msgbox("Your algorithm of choice took " + f"{timed.elapsed:.6f}" + " seconds to execute for the chosen dataset. The results will be shown on the next window", GUITITLE)
         prettyCommunities = helperFunctions.prettifyCommunities(detectedCommunities)

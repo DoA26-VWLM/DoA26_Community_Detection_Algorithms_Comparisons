@@ -36,3 +36,5 @@ This project will be using Python and the following libraries:
 
 ## Datasets
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
+Football Conferences: "https://networkx.org/documentation/stable/auto_examples/graph/plot_football.html"
+Flower: https://graphia.app/example-data.html

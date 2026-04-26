@@ -1,0 +1,24 @@
+Community Detection Report:
+Algorithm: Emperor Penguin Optimization
+Dataset: karateGraphGithub.gml
+Time: 0.018146 seconds
+Modularity: 0.072814
+Community 1: 11, 23
+Community 2: 32
+Community 3: 1, 9, 13, 20
+Community 4: 0, 31
+Community 5: 8
+Community 6: 6
+Community 7: 24, 25, 26, 27, 28, 30
+Community 8: 16, 17, 19, 21, 33
+Community 9: 15
+Community 10: 34
+Community 11: 7, 18
+Community 12: 5
+Community 13: 10
+Community 14: 2
+Community 15: 3, 29
+Community 16: 14
+Community 17: 12
+Community 18: 4
+Community 19: 22

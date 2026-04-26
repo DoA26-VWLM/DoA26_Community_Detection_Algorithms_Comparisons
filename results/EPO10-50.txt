@@ -1,0 +1,13 @@
+Community Detection Report:
+Algorithm: Emperor Penguin Optimization
+Dataset: graph10-d50
+Time: 0.004005 seconds
+Modularity: -0.045369
+Community 1: 8
+Community 2: 2
+Community 3: 5
+Community 4: 9
+Community 5: 1
+Community 6: 0, 3
+Community 7: 4
+Community 8: 6, 7
