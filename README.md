@@ -3,7 +3,28 @@
 ## Introduction
 This project is over the use and comparison of 4 algorithms to solve the Community Detection problem.
 
-### Problem Description
+## Running The Program
+    
+    > python ./code/main.py
+
+    You may alternatively have to use "python3" instead of "python" depending on your interpreter setup. 
+
+    Before this is able to be run, you must install the following dependencies(more details below):
+        - networkx
+        - chrono
+        - numpy
+        - scikit-learn
+        - easygui
+
+    To do this, use the command:
+
+    > pip install [package name]
+
+    for each package required. 
+
+    NOTE: easygui can be slow sometimes. If the program takes a minute to start or GUI windows take longer than expected to open, that is perfectly normal and is outside of our control. The GUI is done by easygui, which although it is very simple, it can be slow and clunky. Furthermore, when you run an algorithm, all program windows will close until the algorithm is done running. This is also normal. The program has not crashed. If you check the console, you will be able to see that the program is still running. This is also due to easygui's implementation. Also, if you run a test on a big dataset, the "continue" button will probably be hidden. You will have to fullscreen the window. Basically, if you see anything weird happening with the GUI, it is likely outside of our control and dependent on the easygui package. We wanted a GUI to make this look nice, but it can be clunky. 
+
+## Problem Description
 The Community Detection problem involves taking a graph and identifying groups of nodes called "communities". A community is a collection of nodes that have high interconnectivity within itself with minimal connectivity outside of the community. We will be analyzing, implementing, and comparing the results of 4 algorithms:
 
 - Brute Force
@@ -13,7 +34,7 @@ The Community Detection problem involves taking a graph and identifying groups o
 - Spectral Clustering
     - Spectral clustering uses linear algebra to turn a graph into points in lower-dimensional space, then clusters those points. Nodes that are strongly connected end up closer together in this new space. The runtime of Spectral Clusting is Θ(n³). This has a much slower runtime than LPA. However, the solution quality and accuracy is better. 
 - Emporeror Penguin Optimizer (EPO)
-    - This is our nature-inspired algorithm, inspired by the huddling of Emperor Penguins to preserve heat. This algorithm makes random guesses of communities that continue to improve by copying the best solution. Every iteration, each “penguin” may move a node to a different community, merge, or split groups, with the end goal of moving towards the solution with a bit of randomness to prevent the algorithm from getting stuck. It has a runtime of Θ(I × P × D), where I = Max Iterations, P = Population Size, and D = Number of Dimensions, which is approximately Θ(n³).
+    - This is our nature-inspired algorithm, inspired by the huddling of Emperor Penguins to preserve heat. This algorithm makes random guesses of communities that continue to improve by copying the best solution. Every iteration, each “penguin” may move a node to a different community, merge, or split groups, with the end goal of moving towards the solution with a bit of randomness to prevent the algorithm from getting stuck. It has a runtime of Θ(I × P × D), where I = Max Iterations, P = Population Size, and D = Number of Dimensions, which is approximately Θ(n) (Two of those values are constants). This algorithm, due to our somewhat messed up implementation of it, does run in linear time, however, the linear time constants that change the imperical runtime end up being huge and dragging out the runtime especially on larger datasets. 
 
 ## Team Members
 This project was developed collaboratively, with the help of:
