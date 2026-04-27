@@ -40,7 +40,7 @@ The Community Detection problem involves taking a graph and identifying groups o
 - Spectral Clustering
     - Spectral clustering uses linear algebra to turn a graph into points in lower-dimensional space, then clusters those points. Nodes that are strongly connected end up closer together in this new space. The runtime of Spectral Clusting is Θ(n³). This has a much slower runtime than LPA. However, the solution quality and accuracy is better. 
 - Emporeror Penguin Optimizer (EPO)
-    - This is our nature-inspired algorithm, inspired by the huddling of Emperor Penguins to preserve heat. This algorithm makes random guesses of communities that continue to improve by copying the best solution. Every iteration, each “penguin” may move a node to a different community, merge, or split groups, with the end goal of moving towards the solution with a bit of randomness to prevent the algorithm from getting stuck. It has a runtime of Θ(I × P × D), where I = Max Iterations, P = Population Size, and D = Number of Dimensions, which is approximately Θ(n) (Two of those values are constants). This algorithm, due to our somewhat messed up implementation of it, does run in linear time, however, the linear time constants that change the imperical runtime end up being huge and dragging out the runtime especially on larger datasets. 
+    - This is our nature-inspired algorithm, inspired by the huddling of Emperor Penguins to preserve heat. This algorithm makes random guesses of communities that continue to improve by copying the best solution. Every iteration, each “penguin” may move a node to a different community, merge, or split groups, with the end goal of moving towards the solution with a bit of randomness to prevent the algorithm from getting stuck. It has a runtime of Θ(I × P × D), where I = Max Iterations, P = Population Size, and D = Number of Dimensions, which is approximately Θ(n) (Two of those values are constants). This algorithm, due to our somewhat messed up implementation of it, does run in linear time, however, the linear time constants that change the emperical runtime end up being huge and dragging out the runtime especially on larger datasets. 
 
 ## Team Members
 This project was developed collaboratively, with the help of:
@@ -65,3 +65,8 @@ This project will be using Python and the following libraries:
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
 Football Conferences: "https://networkx.org/documentation/stable/auto_examples/graph/plot_football.html"
 Flower: https://graphia.app/example-data.html
+
+## Results
+Specific results of experimentation can be found in the ./results folder.
+
+The files that are named in the form of "graph[number]-[number]" are randomly generated datasets. The first value is the number of nodes. The second number is the density percentage. For example, "100-50" means 100 nodes with 50% graph density
