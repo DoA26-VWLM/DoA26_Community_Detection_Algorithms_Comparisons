@@ -3,6 +3,8 @@
 ## Introduction
 This project is over the use and comparison of 4 algorithms to solve the Community Detection problem.
 
+We also included a makeGML.py file that we used to generate our GML data. 
+
 ## Running The Program
 
 ### Easy Run:
@@ -59,7 +61,7 @@ This project will be using Python and the following libraries:
 - scikit-learn
     - Gives us access to a K-Means function instead of having to create it from scratch
 - easygui
-    - Name is self-explanatory. Allows us to create a very simple(albeit slow and clunky) GUI quickly and easily.  
+    - Name is self-explanatory. Allows us to create a very simple(albeit slow and clunky) GUI quickly and easily.
 
 ## Datasets
 Zachary Karate Club GML: "https://gist.github.com/pravj/9168fe52823c1702a07b"
